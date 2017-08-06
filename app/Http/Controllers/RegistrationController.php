@@ -15,6 +15,11 @@ class RegistrationController extends Controller
     public function postRegister(Request $request)
     {
         $user = Sentinel::registerAndActivate($request->all());
+
+        $role = Sentinel::findRoleBySlug('manager');
+
+        $role->users()->attach($user);
+
         return redirect('/');
     }
 }
