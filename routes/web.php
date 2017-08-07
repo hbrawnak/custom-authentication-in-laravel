@@ -14,6 +14,7 @@
 Route::get('/', 'HomeController@home');
 
 Route::group(['middleware' => 'visitors'], function() {
+
     Route::get('/register', 'RegistrationController@register');
     Route::post('/register', 'RegistrationController@postRegister');
 

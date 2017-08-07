@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Mail;
 use Sentinel;
 use Activation;
 use App\User;
@@ -24,6 +25,19 @@ class RegistrationController extends Controller
 
         $role->users()->attach($user);
 
+        $this->sendEmail($user, $activation->code);
+
         return redirect('/');
+    }
+
+    public function sendEmail($user, $code)
+    {
+        Mail::send('email.activation', [
+            'user' => $user,
+            'code' => $code
+        ], function ($message) use ($user) {
+            $message->to($user->email);
+            $message->subject("Hello $user->first_name, activate your account.");
+        });
     }
 }
