@@ -9,6 +9,6 @@ class AdminController extends Controller
     
     public function earnings()
     {
-        return 'fsdfsdfsd';
+        return view('admins.earnings');
     }
 }

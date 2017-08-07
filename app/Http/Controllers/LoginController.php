@@ -16,7 +16,16 @@ class LoginController extends Controller
     {
         Sentinel::authenticate($request->all());
 
-        return redirect('/');
+        $slug = Sentinel::getuser()->roles()->first()->slug;
+
+        if ($slug == 'admin')
+        {
+            return redirect('/earnings');
+        }
+        elseif ($slug == 'manager')
+        {
+            return redirect('/tasks');
+        }
     }
 
     public function logout()

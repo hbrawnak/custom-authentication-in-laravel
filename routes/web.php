@@ -24,3 +24,7 @@ Route::group(['middleware' => 'visitors'], function() {
 Route::post('/logout', 'LoginController@logout');
 
 Route::get('/earnings', 'AdminController@earnings')->middleware('admin');
+
+Route::get('/tasks', 'ManagerController@tasks')->middleware('manager');
+
+Route::get('/activate/{email}/{activationCode}', 'ActivationController@activate');

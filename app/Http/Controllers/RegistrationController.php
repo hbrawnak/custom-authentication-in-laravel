@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Sentinel;
+use Activation;
+use App\User;
 use Illuminate\Http\Request;
 
 class RegistrationController extends Controller
@@ -14,7 +16,9 @@ class RegistrationController extends Controller
 
     public function postRegister(Request $request)
     {
-        $user = Sentinel::registerAndActivate($request->all());
+        $user = Sentinel::register($request->all());
+
+        $activation = Activation::create($user);
 
         $role = Sentinel::findRoleBySlug('manager');
 
