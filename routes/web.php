@@ -20,6 +20,9 @@ Route::group(['middleware' => 'visitors'], function() {
 
     Route::get('/login', 'LoginController@login');
     Route::post('/login', 'LoginController@postLogin');
+
+    Route::get('/forgot-password', 'ForgotPasswordController@forgotPassword');
+    Route::post('/forgot-password', 'ForgotPasswordController@postForgotPassword');
 });
 
 Route::post('/logout', 'LoginController@logout');

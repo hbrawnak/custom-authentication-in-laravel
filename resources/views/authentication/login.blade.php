@@ -34,6 +34,7 @@
                         </div>
 
                         <div class="form-group">
+                            <a href="/forgot-password">Forgot Password?</a>
                             <input type="submit" value="Login" class="btn btn-info pull-right">
                         </div>
                     </form>
