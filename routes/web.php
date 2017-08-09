@@ -23,6 +23,9 @@ Route::group(['middleware' => 'visitors'], function() {
 
     Route::get('/forgot-password', 'ForgotPasswordController@forgotPassword');
     Route::post('/forgot-password', 'ForgotPasswordController@postForgotPassword');
+
+    Route::get('/reset/{email}/{resetCode}', 'ForgotPasswordController@resetPassword');
+    Route::post('/reset/{email}/{resetCode}', 'ForgotPasswordController@postResetPassword');
 });
 
 Route::post('/logout', 'LoginController@logout');
