@@ -1,6 +1,5 @@
-Total Earn: 44234
-<form action="/logout" method="post" id="logout-form">
-    {{ csrf_field() }}
+@extends('layouts.master')
+@section('content')
+    <h3>Total Earn: 44234</h3>
 
-    <a href="#" onclick="document.getElementById('logout-form').submit()">Logout</a>
-</form>
+@endsection

@@ -10,13 +10,12 @@
                 </div>
 
                 <div class="panel-body">
-                    <form action="/login" method="post">
+                    <form id="login-form" action="/login" method="post">
                         {{ csrf_field() }}
-
                         @if(session('error'))
-                        <div class="alert alert-danger">
-                            {{ session('error') }}
-                        </div>
+                            <div class="alert alert-danger">
+                                {{ session('error') }}
+                            </div>
                         @endif
 
                         @if(session('success'))

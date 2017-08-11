@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Cartalyst\Sentinel\Checkpoints\NotActivatedException;
 use Cartalyst\Sentinel\Checkpoints\ThrottlingException;
 use Illuminate\Http\Request;
+use Log;
 use Sentinel;
 
 class LoginController extends Controller

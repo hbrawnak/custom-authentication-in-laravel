@@ -6,7 +6,7 @@
                     <form action="/logout" method="post" id="logout-form">
                         {{ csrf_field() }}
 
-                        <a href="#" onclick="document.getElementById('logout-form').submit()">Logout</a>
+                        <input class="btn btn-info" type="submit" value="Logout">
                     </form>
                 </li>
             @else
