@@ -34,4 +34,6 @@ Route::get('/earnings', 'AdminController@earnings')->middleware('admin');
 
 Route::get('/tasks', 'ManagerController@tasks')->middleware('manager');
 
+Route::post('/posts', 'PostController@store');
+
 Route::get('/activate/{email}/{activationCode}', 'ActivationController@activate');

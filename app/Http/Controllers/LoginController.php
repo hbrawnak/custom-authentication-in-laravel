@@ -16,6 +16,14 @@ class LoginController extends Controller
 
     public function postLogin(Request $request)
     {
+        /*For permission*/
+        /*$role = Sentinel::findRoleById(1);
+
+        $role->permissions = [
+            'post.create' => true,
+        ];
+
+        $role->save();*/
 
         //return $request->all();
         try{

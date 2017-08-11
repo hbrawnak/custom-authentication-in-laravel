@@ -1,7 +1,15 @@
-<li role="presentation">
-    <form action="/logout" method="post" id="logout-form">
-        {{ csrf_field() }}
+@extends('layouts.master')
+@section('content')
+<form action="/posts" method="post">
+    {{ csrf_field() }}
 
-        <a href="#" onclick="document.getElementById('logout-form').submit()">Logout</a>
-    </form>
-</li>
+    <input type="text" name="title" placeholder="Title">
+    <input type="submit" value="Post">
+</form>
+
+<form action="/logout" method="post" id="logout-form">
+    {{ csrf_field() }}
+
+    <a href="#" onclick="document.getElementById('logout-form').submit()">Logout</a>
+</form>
+@endsection
