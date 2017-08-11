@@ -16,8 +16,17 @@ class LoginController extends Controller
 
     public function postLogin(Request $request)
     {
+
+        //return $request->all();
         try{
-            if (Sentinel::authenticate($request->all()))
+            $rememberMe = false;
+
+            if (isset($request->remember_me))
+            {
+                $rememberMe = true;
+            }
+
+            if (Sentinel::authenticate($request->all(), $rememberMe))
             {
                 $slug = Sentinel::getuser()->roles()->first()->slug;
 
